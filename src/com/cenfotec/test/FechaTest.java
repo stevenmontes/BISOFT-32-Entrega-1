@@ -8,65 +8,56 @@ public class FechaTest {
 
     @org.junit.jupiter.api.Test
     void isLeapYear() {
-        int year = 2020;
         Fecha nDate = new Fecha();
-        assertTrue(nDate.isLeapYear(year));
+        assertTrue(nDate.isLeapYear(2020));
     }
 
     @org.junit.jupiter.api.Test
     void isLeapYear2() {
-        int year = 1600;
         Fecha nDate = new Fecha();
-        assertTrue(nDate.isLeapYear(year));
+        assertTrue(nDate.isLeapYear(1600));
     }
 
     @org.junit.jupiter.api.Test
     void isNotLeapYear() {
-        int year = 2019;
         Fecha nDate = new Fecha();
-        assertFalse(nDate.isLeapYear(year));
+        assertFalse(nDate.isLeapYear(2019));
     }
 
     @org.junit.jupiter.api.Test
     void isNotLeapYear2() {
-        int year = 1800;
         Fecha nDate = new Fecha();
-        assertFalse(nDate.isLeapYear(year));
+        assertFalse(nDate.isLeapYear(1800));
     }
 
     @org.junit.jupiter.api.Test
     void validate() {
-        int year = 2019;
-        int month = 2;
-        int day = 29;
         Fecha Date = new Fecha();
-        assertFalse(Date.validate(year, month, day));
+        assertFalse(Date.validate(2019, 2, 29));
     }
 
     @org.junit.jupiter.api.Test
     void validate1() {
-        int year = 1600;
-        int month = 2;
-        int day = 29;
         Fecha Date = new Fecha();
-        assertTrue(Date.validate(year, month, day));
+        assertTrue(Date.validate(1600, 2, 29));
     }
 
+    /**
+     * Valida que la fecha acepta el dia 30.
+     */
     @org.junit.jupiter.api.Test
     void validate2() {
-        int year = 1600;
-        int month = 6;
-        int day = 30;
         Fecha Date = new Fecha();
-        assertTrue(Date.validate(year, month, day));
+        assertTrue(Date.validate(1600, 6, 30));
     }
 
+    /**
+     * Una fecha de mes 6 tiene maximo 30 dias.
+     * Valida que no se pase del dia maximo del mes 6
+     */
     @org.junit.jupiter.api.Test
     void validate3() {
-        int year = 1600;
-        int month = 6;
-        int day = 31;
         Fecha Date = new Fecha();
-        assertFalse(Date.validate(year, month, day));
+        assertFalse(Date.validate(1600, 6, 31));
     }
 }
