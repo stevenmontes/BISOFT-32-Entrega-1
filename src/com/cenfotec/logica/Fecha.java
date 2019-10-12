@@ -11,6 +11,13 @@ public class Fecha {
         return year % 400 == 0 || (year % 4 == 0 && year % 100 != 0);
     }
 
+    /**
+     * Retorna el dia siguiente dada a la fecha ingresada.
+     * @param year
+     * @param month
+     * @param day
+     * @return
+     */
     public String nextDay(int year, int month, int day){
         StringBuilder builder = new StringBuilder();
         day++;
