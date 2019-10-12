@@ -6,24 +6,37 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class FechaTest {
 
+    /**
+     * Anos bisiestos son divisibles entre 400, o divisibles entre 4 pero no entre 100.
+     * 2020 es divisible entre 4 pero no entre 100.
+     */
     @org.junit.jupiter.api.Test
     void isLeapYear() {
         Fecha nDate = new Fecha();
         assertTrue(nDate.isLeapYear(2020));
     }
 
+    /**
+     * 1600 es divisible entre 400.
+     */
     @org.junit.jupiter.api.Test
     void isLeapYear2() {
         Fecha nDate = new Fecha();
         assertTrue(nDate.isLeapYear(1600));
     }
 
+    /**
+     * 2019 no es divisible entre 400, por lo tanto no es bisiesto
+     */
     @org.junit.jupiter.api.Test
     void isNotLeapYear() {
         Fecha nDate = new Fecha();
         assertFalse(nDate.isLeapYear(2019));
     }
 
+    /**
+     *  1800 es divisible entre 4 y 100, por lo tanto no es bisiesto.
+     */
     @org.junit.jupiter.api.Test
     void isNotLeapYear2() {
         Fecha nDate = new Fecha();
