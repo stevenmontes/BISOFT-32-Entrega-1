@@ -90,7 +90,17 @@ public class Main {
                 System.out.println(nDate.nextDay(year, month, day));
                 break;
             case 4:
-                //week day
+                System.out.println("Type a year");
+                str = reader.readLine();
+                year = Integer.parseInt(str);
+                System.out.println("Type a month");
+                str = reader.readLine();
+                month = Integer.parseInt(str);
+                System.out.println("Type a day");
+                str = reader.readLine();
+                day = Integer.parseInt(str);
+
+                System.out.println(nDate.weekDay(year, month, day));
                 break;
             default:
             case 5:

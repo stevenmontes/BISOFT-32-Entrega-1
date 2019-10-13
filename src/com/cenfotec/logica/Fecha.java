@@ -43,6 +43,63 @@ public class Fecha {
     }
 
     /**
+     * Dada una fecha válida, determina el día de la semana que le corresponde
+     * @param year
+     * @param month
+     * @param day
+     * @return el nombre del día de la semana
+     */
+    public String weekDay(int year, int month, int day){
+        String weekDay = "";
+
+        if(validate(year, month, day)){
+
+            int dayNumber;
+
+            if(month <= 2) {
+                year--;
+            }
+
+            dayNumber = (day + (int)(2.6 * ((month - 2 + 12) % 12) - 0.2) + (5 * (year % 4) + 4 *(year % 100) + 6 * (year % 400))) % 7;
+
+            switch (dayNumber) {
+                case 0:
+                    weekDay = "Domingo";
+                    break;
+
+                case 1:
+                    weekDay = "Lunes";
+                    break;
+
+                case 2:
+                    weekDay = "Martes";
+                    break;
+
+                case 3:
+                    weekDay = "Miércoles";
+                    break;
+
+                case 4:
+                    weekDay = "Jueves";
+                    break;
+
+                case 5:
+                    weekDay = "Viernes";
+                    break;
+
+                case 6:
+                    weekDay = "Sábado";
+                    break;
+            }
+
+        } else {
+            return "Fecha inválida";
+        }
+
+        return weekDay;
+    }
+
+    /**
      * Indica si la fecha recibida es valida: día menor o igual que 31, mes
      * menor o igual que 12, año mayor o igual que 1582, combinación
      * correcta de día y mes (febrero 28 ó 29 máximo, abril 30 máximo.)
